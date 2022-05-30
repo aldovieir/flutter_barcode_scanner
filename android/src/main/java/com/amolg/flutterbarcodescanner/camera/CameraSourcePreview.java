@@ -18,9 +18,6 @@ package com.amolg.flutterbarcodescanner.camera;
 import android.Manifest;
 import android.content.Context;
 import android.content.res.Configuration;
-
-import androidx.annotation.RequiresPermission;
-
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.SurfaceHolder;
@@ -30,6 +27,8 @@ import android.view.ViewGroup;
 import com.google.android.gms.common.images.Size;
 
 import java.io.IOException;
+
+import androidx.annotation.RequiresPermission;
 
 public class CameraSourcePreview extends ViewGroup {
     private static final String TAG = "CameraSourcePreview";
@@ -139,7 +138,7 @@ public class CameraSourcePreview extends ViewGroup {
             width = bottom - top;
             height = right - left;
         } else {
-            width = right - left;
+            width = width - left;
             height = bottom - top;
         }
 
